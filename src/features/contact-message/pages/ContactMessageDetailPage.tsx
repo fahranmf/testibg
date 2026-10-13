@@ -14,7 +14,6 @@ import {
   Calendar,
   Copy,
   Check,
-  Send,
   User,
   Inbox,
 } from "lucide-react";
@@ -336,17 +335,6 @@ export default function ContactMessageDetailPage({
             </div>
           </div>
 
-          <div className="shrink-0 pt-2 sm:pt-0">
-            <a
-              href={`mailto:${message.email}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-brand-600 px-3 text-xs font-medium text-white transition-colors hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
-            >
-              <Send className="size-3" />
-              <span>Balas Email</span>
-            </a>
-          </div>
         </div>
 
       </div>

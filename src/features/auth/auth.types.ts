@@ -1,6 +1,11 @@
 import { Permission } from "./constants/permissions";
 
-export type Role = "SUPER_ADMIN" | "ADMIN" | "CUSTOMER_SERVICE" | "USER";
+export type Role =
+  | "SUPER_ADMIN"
+  | "ADMIN"
+  | "CUSTOMER_SERVICE"
+  | "LAB_STAFF"
+  | "USER";
 
 export interface AuthUser {
   id: string;

@@ -29,6 +29,7 @@ const ROLE_FILTERS: { label: string; value: Role | "all" }[] = [
   { label: "Semua", value: "all" },
   { label: "Admin", value: "ADMIN" },
   { label: "CS", value: "CUSTOMER_SERVICE" },
+  { label: "Petugas Lab", value: "LAB_STAFF" },
   { label: "User", value: "USER" },
 ];
 

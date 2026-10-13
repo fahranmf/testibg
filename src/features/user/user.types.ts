@@ -5,6 +5,7 @@ export type UserRole = Exclude<Role, "SUPER_ADMIN">;
 export const USER_ROLE_LABELS: Record<UserRole, string> = {
   ADMIN: "Admin",
   CUSTOMER_SERVICE: "Customer Service",
+  LAB_STAFF: "Petugas Lab",
   USER: "User",
 };
 

@@ -28,7 +28,12 @@ interface UserFormModalProps {
   user?: User | null;
 }
 
-const ROLE_OPTIONS: UserRole[] = ["ADMIN", "CUSTOMER_SERVICE", "USER"];
+const ROLE_OPTIONS: UserRole[] = [
+  "ADMIN",
+  "CUSTOMER_SERVICE",
+  "LAB_STAFF",
+  "USER",
+];
 
 export default function UserFormModal({
   isOpen,
@@ -53,7 +58,7 @@ export default function UserFormModal({
       name: user?.name ?? "",
       email: user?.email ?? "",
       password: "",
-      role: (user?.role === "SUPER_ADMIN" ? "ADMIN" : user?.role ?? "ADMIN") as "ADMIN" | "CUSTOMER_SERVICE" | "USER",
+      role: (user?.role === "SUPER_ADMIN" ? "ADMIN" : user?.role ?? "ADMIN") as UserRole,
     },
   });
 
@@ -63,7 +68,7 @@ export default function UserFormModal({
         name: user?.name ?? "",
         email: user?.email ?? "",
         password: "",
-        role: (user?.role === "SUPER_ADMIN" ? "ADMIN" : user?.role ?? "ADMIN") as "ADMIN" | "CUSTOMER_SERVICE" | "USER",
+        role: (user?.role === "SUPER_ADMIN" ? "ADMIN" : user?.role ?? "ADMIN") as UserRole,
       });
     }
   }, [isOpen, user, reset]);

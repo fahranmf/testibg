@@ -6,6 +6,8 @@ const ROLE_STYLES: Record<UserRole, string> = {
     "bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-400",
   CUSTOMER_SERVICE:
     "bg-purple-50 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400",
+  LAB_STAFF:
+    "bg-cyan-50 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-400",
   USER: "bg-gray-100 text-gray-600 dark:bg-white/[0.06] dark:text-gray-400",
 };
 

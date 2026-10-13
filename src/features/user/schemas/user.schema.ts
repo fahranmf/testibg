@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const roleEnum = z.enum(["ADMIN", "CUSTOMER_SERVICE", "USER"], {
+const roleEnum = z.enum(["ADMIN", "CUSTOMER_SERVICE", "LAB_STAFF", "USER"], {
   message: "Role tidak valid",
 });
 
