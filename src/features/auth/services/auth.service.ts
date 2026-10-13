@@ -4,8 +4,10 @@ import { api } from "@/lib/axios";
 
 import type {
   AuthUser,
+  ChangePasswordPayload,
   LoginPayload,
   LoginResult,
+  UpdateProfilePayload,
 } from "../auth.types";
 
 export const authService = {
@@ -24,4 +26,12 @@ export const authService = {
     api
       .get<{ data: AuthUser }>("/auth/me")
       .then((res) => res.data.data),
+
+  updateProfile: (payload: UpdateProfilePayload) =>
+    api
+      .patch<{ data: AuthUser }>("/auth/profile", payload)
+      .then((res) => res.data.data),
+
+  changePassword: (payload: ChangePasswordPayload) =>
+    api.patch("/auth/password", payload),
 };

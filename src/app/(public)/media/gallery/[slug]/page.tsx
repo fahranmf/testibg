@@ -3,14 +3,20 @@ import Navbar from "@/features/landing/components/Navbar";
 import TopBar from "@/features/landing/components/TopBar";
 import PublicGalleryDetailPage from "@/features/media/gallery/pages/PublicGalleryDetailPage";
 
-export default async function GalleryDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function GalleryDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
 
   return (
     <>
       <TopBar />
       <Navbar />
-      <div className="bg-gray-50 pb-6 sm:pb-8 lg:pb-12"><PublicGalleryDetailPage slug={slug} /></div>
+      <div>
+        <PublicGalleryDetailPage slug={slug} />
+      </div>
       <Footer />
     </>
   );

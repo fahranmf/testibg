@@ -30,3 +30,13 @@ export interface LoginResult {
   token: string;
   user: AuthUser;
 }
+
+export interface UpdateProfilePayload {
+  name: string;
+  email: string;
+}
+
+export interface ChangePasswordPayload {
+  currentPassword: string;
+  newPassword: string;
+}

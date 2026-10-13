@@ -16,3 +16,21 @@ export const registerSchema = z.object({
   employeeCode: z.string().optional(),
 });
 export type RegisterFormValues = z.infer<typeof registerSchema>;
+
+export const updateProfileSchema = z.object({
+  name: z.string().trim().min(1, "Nama wajib diisi"),
+  email: z.string().email("Format email tidak valid"),
+});
+export type UpdateProfileFormValues = z.infer<typeof updateProfileSchema>;
+
+export const changePasswordSchema = z
+  .object({
+    currentPassword: z.string().min(1, "Password lama wajib diisi"),
+    newPassword: z.string().min(8, "Password baru minimal 8 karakter"),
+    confirmPassword: z.string().min(1, "Konfirmasi password wajib diisi"),
+  })
+  .refine((data) => data.newPassword === data.confirmPassword, {
+    message: "Konfirmasi password tidak sama",
+    path: ["confirmPassword"],
+  });
+export type ChangePasswordFormValues = z.infer<typeof changePasswordSchema>;
