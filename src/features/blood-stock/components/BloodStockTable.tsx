@@ -24,11 +24,6 @@ interface BloodStockTableProps {
   onEdit?: (stock: BloodStock) => void;
 }
 
-const RHESUS_STYLE: Record<BloodStock["rhesus"], string> = {
-  POSITIVE: "bg-red-50 text-red-700 dark:bg-red-500/10 dark:text-red-300",
-  NEGATIVE: "bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-300",
-};
-
 const HEADINGS = ["Golongan", "Rhesus", "Stok", "Terakhir Diperbarui"];
 
 const dateTimeFormatter = new Intl.DateTimeFormat("id-ID", {
@@ -153,7 +148,7 @@ export default function BloodStockTable({
               >
                 {/* Golongan Badge */}
                 <TableCell>
-                  <div className="inline-flex h-8 items-center justify-center rounded-lg border border-brand-200 bg-brand-50 px-2.5 font-mono text-xs font-bold text-brand-600 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-400">
+                  <div className="inline-flex h-9 items-center justify-center rounded-lg border border-brand-200 bg-brand-50 px-3 font-mono text-sm font-bold text-brand-600 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-400">
                     {item.bloodType}
                   </div>
                 </TableCell>
@@ -161,7 +156,7 @@ export default function BloodStockTable({
                 {/* Rhesus */}
                 <TableCell>
                   <span
-                    className={`inline-flex items-center rounded border px-2 py-0.5 font-mono text-[11px] font-medium ${
+                    className={`inline-flex items-center rounded border px-2.5 py-1 font-mono text-xs font-medium ${
                       item.rhesus === "POSITIVE"
                         ? "border-brand-200 bg-brand-50/50 text-brand-600 dark:border-brand-500/20 dark:bg-brand-500/10 dark:text-brand-400"
                         : "border-gray-200 bg-gray-50 text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300"
@@ -181,12 +176,12 @@ export default function BloodStockTable({
 
                     {/* Status Pill */}
                     {isOut && (
-                      <span className="rounded border border-error-500/20 bg-error-50 px-1.5 py-0.2 text-[10px] font-semibold text-error-600 dark:border-error-500/20 dark:bg-error-500/10 dark:text-error-400">
+                      <span className="rounded border border-error-500/20 bg-error-50 px-2 py-0.5 text-xs font-semibold text-error-600 dark:border-error-500/20 dark:bg-error-500/10 dark:text-error-400">
                         Habis
                       </span>
                     )}
                     {isLow && (
-                      <span className="rounded border border-amber-200 bg-amber-50 px-1.5 py-0.2 text-[10px] font-semibold text-amber-700 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-400">
+                      <span className="rounded border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-400">
                         Menipis
                       </span>
                     )}
@@ -196,11 +191,11 @@ export default function BloodStockTable({
                 {/* Date & Updater */}
                 <TableCell>
                   <div className="flex flex-col">
-                    <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                       {dateTimeFormatter.format(new Date(item.updatedAt))}
                     </span>
                     {item.updatedby && (
-                      <span className="text-[11px] text-gray-400 dark:text-gray-500">
+                      <span className="text-xs text-gray-400 dark:text-gray-500">
                         oleh {item.updatedby.name}
                       </span>
                     )}

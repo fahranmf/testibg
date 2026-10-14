@@ -131,13 +131,13 @@ export default function UserTable({
               className="group transition-colors duration-150 hover:bg-gray-50/60 dark:hover:bg-white/2.5"
             >
               <TableCell>
-                <span className="text-[13px] font-semibold tracking-[-0.01em] text-gray-800 dark:text-white/90">
+                <span className="text-sm font-semibold tracking-[-0.01em] text-gray-800 dark:text-white/90">
                   {user.name}
                 </span>
               </TableCell>
 
               <TableCell>
-                <span className="font-mono text-[12px] text-gray-500 dark:text-gray-400">
+                <span className="font-mono text-sm text-gray-500 dark:text-gray-400">
                   {user.email}
                 </span>
               </TableCell>
@@ -148,7 +148,7 @@ export default function UserTable({
 
               <TableCell>
                 <span
-                  className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${
+                  className={`inline-flex items-center rounded px-2.5 py-1 text-xs font-medium ${
                     user.isActive
                       ? "bg-success-50 text-success-700 dark:bg-success-500/10 dark:text-success-400"
                       : "bg-gray-100 text-gray-600 dark:bg-white/[0.06] dark:text-gray-400"
@@ -159,7 +159,7 @@ export default function UserTable({
               </TableCell>
 
               <TableCell>
-                <span className="text-[12px] font-medium text-gray-600 dark:text-gray-300">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   {dateFormatter.format(new Date(user.createdAt))}
                 </span>
               </TableCell>
@@ -199,7 +199,7 @@ export default function UserTable({
                         aria-label={`Hapus ${user.name}`}
                         title={`Hapus ${user.name}`}
                         onClick={() => onDelete(user)}
-                        className="inline-flex size-8 items-center justify-center rounded-lg text-gray-400 transition-all duration-150 hover:scale-[1.03] hover:bg-error-50 hover:text-error-600 dark:text-gray-500 dark:hover:bg-error-500/10 dark:hover:text-error-400"
+                        className="inline-flex size-9 items-center justify-center rounded-lg text-gray-400 transition-all duration-150 hover:scale-[1.03] hover:bg-error-50 hover:text-error-600 dark:text-gray-500 dark:hover:bg-error-500/10 dark:hover:text-error-400"
                       >
                         <Trash2 className="size-4" />
                       </button>

@@ -8,6 +8,7 @@ const navItems = [
   { label: "Beranda", href: "/" },
   { label: "Stok Darah", href: "/#stok" },
   { label: "Jadwal Donor", href: "/#jadwal" },
+  { label: "Panduan Donor", href: "/#panduan-donor" },
   {
     label: "Media Center",
     href: "/#media",
@@ -17,7 +18,6 @@ const navItems = [
       { label: "Galeri Dokumentasi", href: "/media/gallery" },
     ],
   },
-  { label: "Panduan Donor", href: "/#panduan-donor" },
 ];
 
 export default function Navbar() {

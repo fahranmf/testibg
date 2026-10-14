@@ -10,7 +10,7 @@ const STATUS_STYLES: Record<ActivityStatus, string> = {
 export default function ActivityStatusBadge({ status }: { status: ActivityStatus }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${STATUS_STYLES[status]}`}
+      className={`inline-flex items-center rounded px-2.5 py-1 text-xs font-medium ${STATUS_STYLES[status]}`}
     >
       {ACTIVITY_STATUS_LABELS[status]}
     </span>

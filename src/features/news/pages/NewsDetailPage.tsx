@@ -152,13 +152,13 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
       <div className="mb-5 flex items-center justify-between">
         <Link
           href="/news"
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke daftar
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           News Detail
         </span>
       </div>
@@ -187,14 +187,12 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
         {/* Hero Overlay Details */}
         <div className="absolute bottom-0 inset-x-0 p-6 text-white">
           <div className="mb-3 flex items-center gap-2">
-            <span className="inline-flex items-center rounded-full border border-white/15 bg-black/25 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-md">
+            <span className="inline-flex items-center rounded border border-white/15 bg-black/25 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-md">
               {NEWS_CATEGORY_LABELS[news.category]}
             </span>
-            <div className="rounded-full border border-white/15 bg-black/25 px-1 backdrop-blur-md">
-              <NewsStatusBadge status={news.status} />
-            </div>
+            <NewsStatusBadge status={news.status} />
           </div>
-          <h1 className="text-xl font-bold leading-tight text-white sm:text-3xl">
+          <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl">
             {news.title}
           </h1>
         </div>
@@ -208,10 +206,10 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
             {/* Header Deskripsi & Action Buttons */}
             <div className="flex flex-col gap-4 border-b border-gray-100 pb-5 dark:border-white/[0.06] sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
                   Isi Berita
                 </h2>
-                <p className="mt-0.5 text-[11px] text-gray-400">
+                <p className="mt-0.5 text-xs text-gray-400">
                   Konten utama dari berita ini.
                 </p>
               </div>
@@ -221,7 +219,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
                 {canUpdate && news.status === "DRAFT" && (
                   <Link
                     href={`/news/${news.newsId}/edit`}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
                   >
                     <Edit3 className="h-3.5 w-3.5" />
                     Edit
@@ -233,7 +231,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
                     type="button"
                     onClick={handlePublish}
                     disabled={isMutating}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-md bg-brand-500 px-3 text-xs font-semibold text-white transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-md bg-brand-500 px-3 text-sm font-semibold text-white transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {publishMutation.isPending ? (
                       <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -251,7 +249,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
                       aria-label="Aksi lainnya"
                       aria-expanded={isActionOpen}
                       onClick={() => setIsActionOpen((prev) => !prev)}
-                      className={`dropdown-toggle inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white ${
+                      className={`dropdown-toggle inline-flex h-9 w-9 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white ${
                         isActionOpen
                           ? "bg-gray-100 text-gray-900 dark:bg-white/[0.06] dark:text-white"
                           : ""
@@ -307,7 +305,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
             {/* Excerpt - pertahanin style */}
             {news.excerpt && (
               <div className="mt-5 border-l-2 border-brand-500 bg-gray-50/70 py-1 pl-4 dark:bg-white/[0.02]">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
                   Ringkasan
                 </p>
                 <p className="mt-1 text-sm font-medium leading-relaxed text-gray-700 dark:text-gray-300">
@@ -317,7 +315,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
             )}
 
             {/* Isi Konten */}
-            <div className="mt-5 whitespace-pre-line text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            <div className="mt-5 whitespace-pre-line text-base leading-relaxed text-gray-700 dark:text-gray-300">
               {news.content}
             </div>
           </section>
@@ -326,7 +324,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
         {/* Meta Sidebar */}
         <aside className="self-start space-y-4 lg:sticky lg:top-22 lg:h-fit">
           <div className="rounded-xl border border-gray-200 bg-white p-5 dark:border-white/[0.07] dark:bg-white/[0.025]">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
               Informasi Detail
             </h2>
 
@@ -336,7 +334,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
                   <span className="inline-block h-2 w-2 rounded-full bg-brand-500 dark:bg-brand-400" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Status
                   </p>
                   <div className="mt-1">
@@ -348,10 +346,10 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
               <div className="flex items-start gap-3">
                 <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     {news.publishedAt ? "Dipublikasikan" : "Dibuat"}
                   </p>
-                  <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                     {formatDate(date)}
                   </p>
                 </div>
@@ -362,10 +360,10 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
                   #
                 </span>
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Kategori
                   </p>
-                  <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                     {NEWS_CATEGORY_LABELS[news.category]}
                   </p>
                 </div>
@@ -375,10 +373,10 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
                 <div className="flex items-start gap-3">
                   <User className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                   <div>
-                    <p className="text-[10px] font-semibold uppercase text-gray-400">
+                    <p className="text-xs font-semibold uppercase text-gray-400">
                       Pembuat
                     </p>
-                    <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                       {news.createdBy.name}
                     </p>
                   </div>
@@ -388,10 +386,10 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
               <div className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Slug URL
                   </p>
-                  <p className="break-all font-mono text-[11px] text-gray-600 dark:text-gray-400">
+                  <p className="break-all font-mono text-xs text-gray-600 dark:text-gray-400">
                     /{news.slug}
                   </p>
                 </div>
@@ -402,7 +400,7 @@ export default function NewsDetailPage({ newsId }: { newsId: string }) {
           {/* Shortcut Card */}
           <Link
             href="/news"
-            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-xs font-semibold text-gray-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-white/[0.07] dark:bg-white/[0.025] dark:text-gray-400 dark:hover:border-brand-400 dark:hover:text-brand-400"
+            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-white/[0.07] dark:bg-white/[0.025] dark:text-gray-400 dark:hover:border-brand-400 dark:hover:text-brand-400"
           >
             <span>Semua berita</span>
             <ChevronRight className="h-4 w-4" />

@@ -21,7 +21,7 @@ export default function StockCard({
             <h3 className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
               Stok Darah
             </h3>
-            <p className="text-[11px] text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-gray-500 dark:text-gray-400">
               Ketersediaan kantong saat ini
             </p>
           </div>
@@ -31,7 +31,7 @@ export default function StockCard({
           <p className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
             {total}
           </p>
-          <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400">
+          <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
             Total
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function StockCard({
                   {item.bloodType}
                 </span>
                 <span
-                  className={`text-[11px] font-semibold ${
+                  className={`text-xs font-semibold ${
                     empty
                       ? "text-gray-400 dark:text-gray-500"
                       : "text-brand-400 dark:text-brand-500"
@@ -79,7 +79,7 @@ export default function StockCard({
                 }`}
               >
                 {item.stock}
-                <span className="ml-1 text-[10px] font-medium text-gray-400">
+                <span className="ml-1 text-xs font-medium text-gray-400">
                   kantong
                 </span>
               </p>

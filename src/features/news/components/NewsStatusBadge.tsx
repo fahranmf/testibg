@@ -10,7 +10,7 @@ const STATUS_STYLES: Record<NewsStatus, string> = {
 export default function NewsStatusBadge({ status }: { status: NewsStatus }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${STATUS_STYLES[status]}`}
+      className={`inline-flex items-center rounded px-2.5 py-1 text-xs font-medium ${STATUS_STYLES[status]}`}
     >
       {NEWS_STATUS_LABELS[status]}
     </span>

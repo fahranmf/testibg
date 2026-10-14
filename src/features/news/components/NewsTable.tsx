@@ -225,14 +225,14 @@ export default function NewsTable({
 
                   <div className="max-w-40 py-0.5">
                     <p
-                      className="truncate text-[13px] font-semibold leading-5 tracking-[-0.01em] text-gray-800 dark:text-white/90"
+                      className="truncate text-sm font-semibold leading-5 tracking-[-0.01em] text-gray-800 dark:text-white/90"
                       title={item.title}
                     >
                       {item.title}
                     </p>
 
                     <p
-                      className="mt-1 truncate font-mono text-[10px] text-gray-400 dark:text-gray-600"
+                      className="mt-1 truncate font-mono text-xs text-gray-400 dark:text-gray-600"
                       title={`/${item.slug}`}
                     >
                       /{item.slug}
@@ -242,7 +242,7 @@ export default function NewsTable({
               </TableCell>
 
               <TableCell>
-                <span className="inline-flex items-center rounded-md bg-gray-100/80 px-2.5 py-1 text-[11px] font-medium text-gray-600 dark:bg-white/5 dark:text-gray-400">
+                <span className="inline-flex items-center rounded-md bg-gray-100/80 px-2.5 py-1 text-xs font-medium text-gray-600 dark:bg-white/5 dark:text-gray-400">
                   {NEWS_CATEGORY_LABELS[item.category]}
                 </span>
               </TableCell>
@@ -252,7 +252,7 @@ export default function NewsTable({
               </TableCell>
 
               <TableCell>
-                <span className="text-[12px] font-medium text-gray-600 dark:text-gray-300">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   {item.publishedAt
                     ? dateFormatter.format(new Date(item.publishedAt))
                     : "—"}
@@ -260,7 +260,7 @@ export default function NewsTable({
               </TableCell>
 
               <TableCell>
-                <span className="text-[12px] font-medium text-gray-600 dark:text-gray-300">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   {dateFormatter.format(new Date(item.createdAt))}
                 </span>
               </TableCell>

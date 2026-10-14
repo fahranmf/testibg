@@ -150,12 +150,12 @@ export default function ContactMessageDetailPage({
         <h2 className="text-base font-semibold text-gray-900 dark:text-white">
           Pesan Tidak Ditemukan
         </h2>
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Pesan mungkin telah dihapus atau URL salah.
         </p>
         <Link
           href="/contact-messages"
-          className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-600 px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Kembali ke Daftar
@@ -170,13 +170,13 @@ export default function ContactMessageDetailPage({
       <div className="mb-5 flex items-center justify-between">
         <Link
           href="/contact-messages"
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke daftar
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           Detail Message
         </span>
       </div>
@@ -191,11 +191,11 @@ export default function ContactMessageDetailPage({
             <div className="space-y-2 min-w-0">
               <div className="flex items-center gap-2.5">
                 <ContactMessageStatusBadge status={message.status} />
-                <span className="text-[11px] font-medium text-gray-400 dark:text-gray-500">
+                <span className="text-xs font-medium text-gray-400 dark:text-gray-500">
                   ID: #{message.id.slice(0, 8)}
                 </span>
               </div>
-              <h1 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white sm:text-xl break-words">
+              <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-2xl break-words">
                 {message.subject || "Tanpa Subjek"}
               </h1>
             </div>
@@ -207,7 +207,7 @@ export default function ContactMessageDetailPage({
                   type="button"
                   onClick={handleToggleRead}
                   disabled={isMutating}
-                  className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50 dark:border-white/10 dark:bg-transparent dark:text-gray-300 dark:hover:bg-white/5"
+                  className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50 dark:border-white/10 dark:bg-transparent dark:text-gray-300 dark:hover:bg-white/5"
                 >
                   {markReadMutation.isPending || markUnreadMutation.isPending ? (
                     <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -229,7 +229,7 @@ export default function ContactMessageDetailPage({
                     aria-label="Hapus"
                     aria-expanded={isActionOpen}
                     onClick={() => setIsActionOpen((prev) => !prev)}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 text-gray-600 transition-colors hover:bg-gray-50 hover:text-error-600 dark:border-white/10 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-error-400"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 transition-colors hover:bg-gray-50 hover:text-error-600 dark:border-white/10 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-error-400"
                   >
                     <Trash2 className="h-3.5 w-3.5" />
                   </button>
@@ -244,7 +244,7 @@ export default function ContactMessageDetailPage({
                         setIsActionOpen(false);
                         handleDelete();
                       }}
-                      baseClassName="flex w-full items-center gap-2 px-3 py-1.5 text-xs font-medium text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
+                      baseClassName="flex w-full items-center gap-2 px-3 py-2 text-sm font-medium text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
                     >
                       {deleteMutation.isPending ? (
                         <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -265,17 +265,17 @@ export default function ContactMessageDetailPage({
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             
             <div className="flex items-center gap-3 min-w-0">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700 dark:bg-brand-500/20 dark:text-brand-300">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700 dark:bg-brand-500/20 dark:text-brand-300">
                 {getInitials(message.name)}
               </div>
 
               <div className="min-w-0 space-y-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-gray-900 dark:text-white truncate">
+                  <span className="text-sm font-bold text-gray-900 dark:text-white truncate">
                     {message.name}
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+                <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
                   <span className="truncate">{message.email}</span>
                   <button
                     type="button"
@@ -293,7 +293,7 @@ export default function ContactMessageDetailPage({
               </div>
             </div>
 
-            <div className="flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 shrink-0">
+            <div className="flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 shrink-0">
               <Calendar className="size-3.5 text-gray-400" />
               <span>{formatDate(message.createdAt)}</span>
             </div>
@@ -303,13 +303,13 @@ export default function ContactMessageDetailPage({
 
         {/* Main Body Content: Isi Pesan */}
         <div className="p-5 sm:p-6">
-          <div className="mb-2.5 flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+          <div className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
             <Inbox className="size-3.5 text-brand-600 dark:text-brand-400" />
             <span>Isi Pesan</span>
           </div>
 
           <div className="rounded-lg border border-gray-200/60 bg-gray-50/40 p-4 dark:border-white/5 dark:bg-white/[0.01]">
-            <p className="whitespace-pre-line text-xs sm:text-sm leading-relaxed text-gray-800 dark:text-gray-200">
+            <p className="whitespace-pre-line text-sm leading-relaxed text-gray-800 dark:text-gray-200 sm:text-base">
               {message.message}
             </p>
           </div>
@@ -317,7 +317,7 @@ export default function ContactMessageDetailPage({
 
         {/* Sender Technical Meta & Quick Actions Footer */}
         <div className="flex flex-col gap-3 border-t border-gray-100 bg-gray-50/30 px-5 py-4 dark:border-white/5 dark:bg-white/[0.01] sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-500 dark:text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-1.5">
               <User className="size-3.5 text-gray-400" />
               <span className="text-gray-400">Pengirim:</span>

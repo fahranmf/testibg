@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Edit3, AlertCircle } from "lucide-react";
+import { ArrowLeft, AlertCircle } from "lucide-react";
 
 import { useActivityDetail } from "../hooks/useActivityDetail";
 import ActivityForm from "../components/ActivityForm";
@@ -40,13 +40,13 @@ export default function ActivityEditPage({
           <h3 className="mt-4 text-base font-bold text-gray-900 dark:text-white">
             Kegiatan Tidak Ditemukan
           </h3>
-          <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-1.5 text-sm text-gray-500 dark:text-gray-400">
             Data kegiatan yang ingin kamu edit mungkin sudah dihapus atau URL
             tidak valid.
           </p>
           <Link
             href="/activities"
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Kembali ke Daftar Kegiatan
@@ -62,13 +62,13 @@ export default function ActivityEditPage({
       <div className="mb-5 flex items-center justify-between">
         <Link
           href={`/activities/${activity.id}`}
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke detail kegiatan
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           Edit Activity
         </span>
       </div>

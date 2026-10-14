@@ -74,7 +74,7 @@ export default function PageHeader({
             size="sm"
             variant="primary"
             onClick={onAction}
-            className="h-9 shrink-0 gap-1.5 self-start rounded-lg px-3.5 text-xs font-semibold shadow-sm transition hover:bg-brand-700 active:scale-[0.98] dark:bg-brand-500 dark:hover:bg-brand-600 sm:self-auto"
+            className="h-9 shrink-0 gap-1.5 self-start rounded-lg px-3.5 text-sm font-semibold shadow-sm transition hover:bg-brand-700 active:scale-[0.98] dark:bg-brand-500 dark:hover:bg-brand-600 sm:self-auto"
           >
             {actionIcon ?? (
               <svg

@@ -12,7 +12,7 @@ export default function MapsSection() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
           {/* Left — editorial text */}
           <div className="flex flex-col">
-            <h2 className="max-w-lg font-serif text-3xl font-medium leading-[1.15] text-gray-900 lg:text-4xl">
+            <h2 className="max-w-lg text-3xl font-medium leading-[1.15] text-gray-900 lg:text-4xl">
               Temukan kami di{" "}
               <span className="relative inline-block font-outfit font-semibold text-brand-600">
                 <span className="absolute inset-x-0 bottom-0.5 h-2 rounded-full bg-brand-100/80" />
@@ -96,7 +96,7 @@ export default function MapsSection() {
               />
             </div>
             {/* Map overlay bar */}
-            <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/20 bg-white/90 px-5 py-3 backdrop-blur-md">
+            {/* <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/20 bg-white/90 px-5 py-3 backdrop-blur-md">
               
               <div className="flex items-center justify-between gap-3">
                 
@@ -120,7 +120,7 @@ export default function MapsSection() {
                   directions
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

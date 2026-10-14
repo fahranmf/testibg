@@ -124,12 +124,12 @@ export default function ActivityDetailPage({
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           Kegiatan Tidak Ditemukan
         </h2>
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Data kegiatan mungkin telah dihapus atau URL yang kamu tuju salah.
         </p>
         <Link
           href="/activities"
-          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           <ArrowLeft className="h-4 w-4" />
           Kembali ke Daftar
@@ -149,13 +149,13 @@ export default function ActivityDetailPage({
       <div className="mb-5 flex items-center justify-between">
         <Link
           href="/activities"
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke daftar
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           Detail Activity
         </span>
       </div>
@@ -174,7 +174,7 @@ export default function ActivityDetailPage({
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center text-gray-400 dark:text-gray-600">
             <ImageOff className="h-12 w-12 stroke-[1.5]" />
-            <span className="mt-2 text-xs font-medium">
+              <span className="mt-2 text-sm font-medium">
               Tidak ada gambar sampul
             </span>
           </div>
@@ -186,7 +186,7 @@ export default function ActivityDetailPage({
           <div className="mb-3 flex items-center gap-2">
             <ActivityStatusBadge status={activity.status} />
           </div>
-          <h1 className="text-xl font-bold leading-tight text-white sm:text-3xl">
+          <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl">
             {activity.title}
           </h1>
         </div>
@@ -200,10 +200,10 @@ export default function ActivityDetailPage({
             {/* Header Deskripsi & Action Buttons */}
             <div className="flex flex-col gap-4 border-b border-gray-100 pb-5 dark:border-white/[0.06] sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
                   Deskripsi Kegiatan
                 </h2>
-                <p className="mt-0.5 text-[11px] text-gray-400">
+                <p className="mt-0.5 text-xs text-gray-400">
                   Detail utama rincian kegiatan.
                 </p>
               </div>
@@ -215,7 +215,7 @@ export default function ActivityDetailPage({
                 {canUpdate && activity.status === "DRAFT" && (
                   <Link
                     href={`/activities/${activity.id}/edit`}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
                   >
                     <Edit3 className="h-3.5 w-3.5" />
                     Edit
@@ -227,7 +227,7 @@ export default function ActivityDetailPage({
                     type="button"
                     onClick={handlePublish}
                     disabled={isMutating}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-md bg-brand-500 px-3 text-xs font-semibold text-white transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-md bg-brand-500 px-3 text-sm font-semibold text-white transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {publishMutation.isPending ? (
                       <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -245,7 +245,7 @@ export default function ActivityDetailPage({
                       aria-label="Aksi lainnya"
                       aria-expanded={isActionOpen}
                       onClick={() => setIsActionOpen((prev) => !prev)}
-                      className={`dropdown-toggle inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white ${
+                      className={`dropdown-toggle inline-flex h-9 w-9 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white ${
                         isActionOpen
                           ? "bg-gray-100 text-gray-900 dark:bg-white/[0.06] dark:text-white"
                           : ""
@@ -265,7 +265,7 @@ export default function ActivityDetailPage({
                             setIsActionOpen(false);
                             handleArchive();
                           }}
-                          baseClassName="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white/[0.05] dark:hover:text-white"
+                          baseClassName="flex w-full items-center gap-2 px-3 py-2 text-left text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white/[0.05] dark:hover:text-white"
                         >
                           {archiveMutation.isPending ? (
                             <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -282,7 +282,7 @@ export default function ActivityDetailPage({
                             setIsActionOpen(false);
                             handleDelete();
                           }}
-                          baseClassName="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-medium text-error-600 transition-colors hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
+                          baseClassName="flex w-full items-center gap-2 px-3 py-2 text-left text-sm font-medium text-error-600 transition-colors hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
                         >
                           {deleteMutation.isPending ? (
                             <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -299,7 +299,7 @@ export default function ActivityDetailPage({
             </div>
 
             {/* Isi Deskripsi */}
-            <div className="mt-5 whitespace-pre-line text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            <div className="mt-5 whitespace-pre-line text-base leading-relaxed text-gray-700 dark:text-gray-300">
               {activity.description}
             </div>
           </section>
@@ -308,7 +308,7 @@ export default function ActivityDetailPage({
           {activity.images && activity.images.length > 0 && (
             <section className="rounded-xl border border-gray-200 bg-white p-6 dark:border-white/[0.07] dark:bg-white/[0.025]">
               <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
                   Galeri Foto
                 </h2>
                 <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
@@ -332,7 +332,7 @@ export default function ActivityDetailPage({
                         className="object-contain"
                       />
                       {img.caption && (
-                        <div className="absolute inset-x-0 bottom-0 bg-black/60 p-2 text-[10px] text-white opacity-0 transition group-hover:opacity-100">
+                        <div className="absolute inset-x-0 bottom-0 bg-black/60 p-2 text-xs text-white opacity-0 transition group-hover:opacity-100">
                           <p className="line-clamp-2">{img.caption}</p>
                         </div>
                       )}
@@ -354,10 +354,10 @@ export default function ActivityDetailPage({
               <div className="flex items-start gap-3">
                 <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Tanggal
                   </p>
-                  <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                     {formatDate(eventDate)}
                   </p>
                 </div>
@@ -367,10 +367,10 @@ export default function ActivityDetailPage({
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                   <div>
-                    <p className="text-[10px] font-semibold uppercase text-gray-400">
+                    <p className="text-xs font-semibold uppercase text-gray-400">
                       Lokasi
                     </p>
-                    <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                       {activity.location}
                     </p>
                   </div>
@@ -381,10 +381,10 @@ export default function ActivityDetailPage({
                 <div className="flex items-start gap-3">
                   <User className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                   <div>
-                    <p className="text-[10px] font-semibold uppercase text-gray-400">
+                    <p className="text-xs font-semibold uppercase text-gray-400">
                       Pembuat
                     </p>
-                    <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                       {activity.createdBy.name}
                     </p>
                   </div>
@@ -394,10 +394,10 @@ export default function ActivityDetailPage({
               <div className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Slug URL
                   </p>
-                  <p className="break-all font-mono text-[11px] text-gray-600 dark:text-gray-400">
+                  <p className="break-all font-mono text-xs text-gray-600 dark:text-gray-400">
                     /{activity.slug}
                   </p>
                 </div>
@@ -408,7 +408,7 @@ export default function ActivityDetailPage({
           {/* Shortcut Card */}
           <Link
             href="/activities"
-            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-xs font-semibold text-gray-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-white/[0.07] dark:bg-white/[0.025] dark:text-gray-400 dark:hover:border-brand-400 dark:hover:text-brand-400"
+            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-white/[0.07] dark:bg-white/[0.025] dark:text-gray-400 dark:hover:border-brand-400 dark:hover:text-brand-400"
           >
             <span>Lihat semua kegiatan</span>
             <ChevronRight className="h-4 w-4" />

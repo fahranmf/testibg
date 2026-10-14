@@ -30,7 +30,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
         {/* Header */}
         <AppHeader />
         {/* Page Content */}
-        <div className="mx-auto max-w-(--breakpoint-lg) p-4 md:p-6">{children}</div>
+        <div className="mx-auto max-w-(--breakpoint-xl) p-4 md:p-6">{children}</div>
       </div>
     </div>
   );

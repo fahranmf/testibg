@@ -30,14 +30,14 @@ export default function RecentList<T>({
         </div>
         <Link
           href={viewAllHref}
-          className="inline-flex items-center gap-1 text-[11px] font-medium text-brand-600 hover:text-brand-700 dark:text-brand-400"
+          className="inline-flex items-center gap-1 text-xs font-medium text-brand-600 hover:text-brand-700 dark:text-brand-400"
         >
           Lihat semua
           <ArrowRight className="size-3.5" />
         </Link>
       </div>
       {items.length === 0 ? (
-        <p className="p-6 text-center text-xs text-gray-500 dark:text-gray-400">
+        <p className="p-6 text-center text-sm text-gray-500 dark:text-gray-400">
           {emptyText}
         </p>
       ) : (

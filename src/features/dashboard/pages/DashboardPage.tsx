@@ -75,13 +75,13 @@ export default function DashboardPage() {
           <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
             Gagal memuat data dashboard
           </p>
-          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Periksa koneksi lalu coba lagi.
           </p>
           <button
             type="button"
             onClick={() => refetch()}
-            className="mt-4 inline-flex h-9 items-center justify-center rounded-lg bg-brand-600 px-4 text-xs font-semibold text-white shadow-sm transition hover:bg-brand-700 active:scale-[0.98] dark:bg-brand-500 dark:hover:bg-brand-600"
+            className="mt-4 inline-flex h-10 items-center justify-center rounded-lg bg-brand-600 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 active:scale-[0.98] dark:bg-brand-500 dark:hover:bg-brand-600"
           >
             Coba lagi
           </button>
@@ -159,12 +159,12 @@ export default function DashboardPage() {
                       )}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-[13px] font-semibold text-gray-800 dark:text-white/90">
+                      <p className="truncate text-sm font-semibold text-gray-800 dark:text-white/90">
                         {item.title}
                       </p>
                       <div className="mt-1 flex items-center gap-2">
                         <StatusBadge status={item.status} />
-                        <span className="text-[11px] text-gray-400">
+                        <span className="text-xs text-gray-400">
                           {item.publishedAt
                             ? new Intl.DateTimeFormat("id-ID", {
                                 dateStyle: "medium",
@@ -191,7 +191,7 @@ export default function DashboardPage() {
                     className="flex items-start gap-3.5 px-5 py-3.5 transition-colors hover:bg-gray-50/60 dark:hover:bg-white/[0.02]"
                   >
                     <div className="flex w-12 shrink-0 flex-col items-center rounded-lg border border-gray-200/80 bg-gray-50 py-1.5 dark:border-white/[0.07] dark:bg-white/[0.03]">
-                      <span className="text-[10px] font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">
+                      <span className="text-xs font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">
                         {new Intl.DateTimeFormat("id-ID", {
                           month: "short",
                         }).format(new Date(event.startAt))}
@@ -203,18 +203,18 @@ export default function DashboardPage() {
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-[13px] font-semibold text-gray-800 dark:text-white/90">
+                      <p className="truncate text-sm font-semibold text-gray-800 dark:text-white/90">
                         {event.title}
                       </p>
-                      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-500 dark:text-gray-400">
+                      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
                         <span className="inline-flex items-center gap-1">
-                          <CalendarDays className="size-3" />
+                          <CalendarDays className="size-3.5" />
                           {new Intl.DateTimeFormat("id-ID", {
                             timeStyle: "short",
                           }).format(new Date(event.startAt))}
                         </span>
                         <span className="inline-flex min-w-0 items-center gap-1">
-                          <MapPin className="size-3 shrink-0" />
+                          <MapPin className="size-3.5 shrink-0" />
                           <span className="truncate">{event.location}</span>
                         </span>
                       </div>
@@ -252,12 +252,12 @@ export default function DashboardPage() {
                       )}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-[13px] font-semibold text-gray-800 dark:text-white/90">
+                      <p className="truncate text-sm font-semibold text-gray-800 dark:text-white/90">
                         {item.title}
                       </p>
                       <div className="mt-1 flex items-center gap-2">
                         <StatusBadge status={item.status} />
-                        <span className="text-[11px] text-gray-400">
+                        <span className="text-xs text-gray-400">
                           {new Intl.DateTimeFormat("id-ID", {
                             dateStyle: "medium",
                           }).format(new Date(item.eventDate))}

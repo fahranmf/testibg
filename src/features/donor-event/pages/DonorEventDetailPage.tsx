@@ -133,12 +133,12 @@ export default function DonorEventDetailPage({
         <h2 className="text-base font-semibold text-gray-900 dark:text-white">
           Donor Event Tidak Ditemukan
         </h2>
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Data donor event mungkin telah dihapus atau URL salah.
         </p>
         <Link
           href="/donor-events"
-          className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-600 px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Kembali ke Daftar
@@ -156,13 +156,13 @@ export default function DonorEventDetailPage({
       <div className="mb-5 flex items-center justify-between">
         <Link
           href="/donor-events"
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke daftar
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           Detail Donor Event
         </span>
       </div>
@@ -181,7 +181,7 @@ export default function DonorEventDetailPage({
                 </span>
               </div>
 
-              <h1 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white sm:text-xl break-words">
+              <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-2xl break-words">
                 {event.title}
               </h1>
             </div>
@@ -191,7 +191,7 @@ export default function DonorEventDetailPage({
               {canUpdate && event.status === "DRAFT"  && (
                 <Link
                   href={`/donor-events/${event.id}/edit`}
-                  className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-white/10 dark:bg-transparent dark:text-gray-300 dark:hover:bg-white/5"
+                  className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-white/10 dark:bg-transparent dark:text-gray-300 dark:hover:bg-white/5"
                 >
                   <Edit3 className="h-3.5 w-3.5" />
                   Edit
@@ -203,7 +203,7 @@ export default function DonorEventDetailPage({
                   type="button"
                   onClick={handlePublish}
                   disabled={isMutating}
-                  className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-brand-600 px-3 text-xs font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-50 dark:bg-brand-500 dark:hover:bg-brand-600"
+                  className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-brand-600 px-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-50 dark:bg-brand-500 dark:hover:bg-brand-600"
                 >
                   {publishMutation.isPending ? (
                     <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -221,7 +221,7 @@ export default function DonorEventDetailPage({
                     aria-label="Aksi lainnya"
                     aria-expanded={isActionOpen}
                     onClick={() => setIsActionOpen((prev) => !prev)}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 text-gray-600 transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-gray-400 dark:hover:bg-white/5"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-gray-400 dark:hover:bg-white/5"
                   >
                     <MoreHorizontal className="h-4 w-4" />
                   </button>
@@ -237,7 +237,7 @@ export default function DonorEventDetailPage({
                           setIsActionOpen(false);
                           handleArchive();
                         }}
-                        baseClassName="flex w-full items-center gap-2 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-white/5"
+                        baseClassName="flex w-full items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-white/5"
                       >
                         {archiveMutation.isPending ? (
                           <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -254,7 +254,7 @@ export default function DonorEventDetailPage({
                           setIsActionOpen(false);
                           handleDelete();
                         }}
-                        baseClassName="flex w-full items-center gap-2 px-3 py-1.5 text-xs font-medium text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
+                        baseClassName="flex w-full items-center gap-2 px-3 py-2 text-sm font-medium text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
                       >
                         {deleteMutation.isPending ? (
                           <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -281,10 +281,10 @@ export default function DonorEventDetailPage({
                 <Calendar className="size-4" />
               </div>
               <div className="min-w-0 space-y-0.5">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Tanggal Pelaksanaan
                 </span>
-                <span className="block text-xs font-bold text-gray-900 dark:text-white truncate">
+                <span className="block text-sm font-bold text-gray-900 dark:text-white truncate">
                   {formatDate(event.startAt)}
                 </span>
               </div>
@@ -296,10 +296,10 @@ export default function DonorEventDetailPage({
                 <Clock className="size-4" />
               </div>
               <div className="min-w-0 space-y-0.5">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Jam Operasional
                 </span>
-                <span className="block text-xs font-bold text-gray-900 dark:text-white truncate">
+                <span className="block text-sm font-bold text-gray-900 dark:text-white truncate">
                   {formatTime(event.startAt)} – {formatTime(event.endAt)} WIB
                 </span>
               </div>
@@ -311,10 +311,10 @@ export default function DonorEventDetailPage({
                 <MapPin className="size-4" />
               </div>
               <div className="min-w-0 space-y-0.5">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Gedung / Tempat
                 </span>
-                <span className="block text-xs font-bold text-gray-900 dark:text-white truncate">
+                <span className="block text-sm font-bold text-gray-900 dark:text-white truncate">
                   {event.location}
                 </span>
               </div>
@@ -326,10 +326,10 @@ export default function DonorEventDetailPage({
                 <Phone className="size-4" />
               </div>
               <div className="min-w-0 space-y-0.5">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Narahubung
                 </span>
-                <span className="block text-xs font-bold text-gray-900 dark:text-white truncate">
+                <span className="block text-sm font-bold text-gray-900 dark:text-white truncate">
                   {event.contactInfo || "-"}
                 </span>
               </div>
@@ -340,13 +340,13 @@ export default function DonorEventDetailPage({
 
         {/* Section: Deskripsi Event */}
         <div className="border-b border-gray-100 p-5 dark:border-white/5 sm:p-6">
-          <div className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+          <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
             <FileText className="size-3.5 text-brand-600 dark:text-brand-400" />
             <span>Deskripsi Event</span>
           </div>
 
           <div className="rounded-lg border border-gray-200/60 bg-gray-50/40 p-4 dark:border-white/5 dark:bg-white/[0.01]">
-            <p className="text-xs sm:text-sm leading-relaxed text-gray-800 dark:text-gray-200">
+            <p className="text-sm leading-relaxed text-gray-800 dark:text-gray-200 sm:text-base">
               {event.description ? (
                 <span className="whitespace-pre-line">{event.description}</span>
               ) : (
@@ -360,7 +360,7 @@ export default function DonorEventDetailPage({
 
         {/* Section: Detail Informasi Tambahan */}
         <div className="p-5 sm:p-6">
-          <div className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+          <div className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
             <Info className="size-3.5 text-brand-600 dark:text-brand-400" />
             <span>Informasi Detail & Pendaftaran</span>
           </div>
@@ -373,7 +373,7 @@ export default function DonorEventDetailPage({
                 <Globe className="size-4" />
               </div>
               <div className="space-y-0.5 min-w-0">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Form Pendaftaran
                 </span>
                 {event.registrationUrl ? (
@@ -381,12 +381,12 @@ export default function DonorEventDetailPage({
                     href={event.registrationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 hover:underline dark:text-brand-400 truncate"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400 truncate"
                   >
                     Buka Form Pendaftaran <ExternalLink className="size-3" />
                   </a>
                 ) : (
-                  <span className="block text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <span className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     On-site (Tanpa Form Pendaftaran)
                   </span>
                 )}
@@ -399,10 +399,10 @@ export default function DonorEventDetailPage({
                 <User className="size-4" />
               </div>
               <div className="space-y-0.5 min-w-0">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Dibuat Oleh
                 </span>
-                <span className="block text-xs font-semibold text-gray-900 dark:text-white truncate">
+                <span className="block text-sm font-semibold text-gray-900 dark:text-white truncate">
                   {event.createdBy?.name || "-"}
                 </span>
               </div>
@@ -414,10 +414,10 @@ export default function DonorEventDetailPage({
                 <MapPin className="size-4" />
               </div>
               <div className="space-y-0.5 min-w-0">
-                <span className="block text-[11px] font-medium text-gray-400">
+                <span className="block text-xs font-medium text-gray-400">
                   Alamat Lengkap
                 </span>
-                <span className="block text-xs font-medium text-gray-800 dark:text-gray-200 leading-relaxed">
+                <span className="block text-sm font-medium text-gray-800 dark:text-gray-200 leading-relaxed">
                   {event.address || "-"}
                 </span>
               </div>
@@ -427,9 +427,9 @@ export default function DonorEventDetailPage({
         </div>
 
         {/* Card Footer */}
-        <div className="flex items-center justify-between border-t border-gray-100 bg-gray-50/50 px-5 py-3 text-[11px] text-gray-400 dark:border-white/5 dark:bg-white/[0.01]">
+        <div className="flex items-center justify-between border-t border-gray-100 bg-gray-50/50 px-5 py-3 text-xs text-gray-400 dark:border-white/5 dark:bg-white/[0.01]">
           <span>Dibuat pada: {formatDate(event.createdAt)}</span>
-          <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+          <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
             Detail Donor Event
           </span>
         </div>

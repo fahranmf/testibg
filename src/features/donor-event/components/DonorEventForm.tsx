@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -149,14 +149,14 @@ export default function DonorEventForm({ mode, initialData }: Props) {
           <div>
             <div className="flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <FileText className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Informasi Utama
               </h3>
             </div>
 
             <div className="mt-5 space-y-4">
               <div>
-                <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                   Judul Event <span className="text-rose-500">*</span>
                 </Label>
                 <Input
@@ -173,13 +173,13 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               </div>
 
               <div>
-                <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                   URL Slug <span className="text-rose-500">*</span>
                 </Label>
                 <Input
                   placeholder="donor-darah-gratis-balai-warga"
                   error={!!errors.slug}
-                  className="mt-1.5 rounded-lg border-gray-200 font-mono text-xs text-gray-600 focus:border-brand-500 focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300"
+                  className="mt-1.5 rounded-lg border-gray-200 font-mono text-sm text-gray-600 focus:border-brand-500 focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300"
                   {...register("slug")}
                 />
                 {errors.slug ? (
@@ -187,7 +187,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
                     {errors.slug.message}
                   </p>
                 ) : (
-                  <p className="mt-1 text-[11px] leading-5 text-gray-400 dark:text-gray-500">
+                  <p className="mt-1 text-xs leading-5 text-gray-400 dark:text-gray-500">
                     Slug dibuat otomatis dari judul dan dapat diubah secara
                     manual.
                   </p>
@@ -195,7 +195,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               </div>
 
               <div>
-                <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                   Deskripsi
                 </Label>
                 <textarea
@@ -226,7 +226,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
           <div>
             <div className="flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <Calendar className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Waktu & Lokasi
               </h3>
             </div>
@@ -234,7 +234,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
             <div className="mt-5 space-y-4">
               {/* Tanggal */}
               <div>
-                <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                   <Calendar className="h-3.5 w-3.5 text-gray-400" /> Tanggal
                   Pelaksanaan <span className="text-rose-500">*</span>
                 </Label>
@@ -254,7 +254,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               {/* Jam Mulai & Selesai */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+                  <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                     <Clock className="h-3.5 w-3.5 text-gray-400" /> Jam Mulai{" "}
                     <span className="text-rose-500">*</span>
                   </Label>
@@ -272,7 +272,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
                 </div>
 
                 <div>
-                  <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+                  <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                     <Clock className="h-3.5 w-3.5 text-gray-400" /> Jam
                     Selesai <span className="text-rose-500">*</span>
                   </Label>
@@ -292,7 +292,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
 
               {/* Lokasi */}
               <div>
-                <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                   <MapPin className="h-3.5 w-3.5 text-gray-400" /> Lokasi{" "}
                   <span className="text-rose-500">*</span>
                 </Label>
@@ -311,7 +311,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
 
               {/* Alamat */}
               <div>
-                <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                   Alamat Lengkap
                 </Label>
                 <Input
@@ -333,14 +333,14 @@ export default function DonorEventForm({ mode, initialData }: Props) {
           <div>
             <div className="flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <Link2 className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Informasi Tambahan
               </h3>
             </div>
 
             <div className="mt-5 space-y-4">
               <div>
-                <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                   <Phone className="h-3.5 w-3.5 text-gray-400" /> Info Kontak
                 </Label>
                 <Input
@@ -357,7 +357,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               </div>
 
               <div>
-                <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                   <Link2 className="h-3.5 w-3.5 text-gray-400" /> URL
                   Pendaftaran (Optional)
                 </Label>
@@ -382,7 +382,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
           <div>
             <div className="mb-3 flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <FileText className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Ringkasan
               </h3>
             </div>
@@ -391,10 +391,10 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               <div className="flex items-start gap-2.5">
                 <Calendar className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Tanggal
                   </p>
-                  <p className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     {watch("eventDate")
                       ? new Date(watch("eventDate") + "T00:00:00").toLocaleDateString("id-ID", {
                           dateStyle: "full",
@@ -407,10 +407,10 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               <div className="flex items-start gap-2.5">
                 <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Jam
                   </p>
-                  <p className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     {watch("startTime") && watch("endTime")
                       ? `${watch("startTime")} — ${watch("endTime")}`
                       : "—"}
@@ -421,10 +421,10 @@ export default function DonorEventForm({ mode, initialData }: Props) {
               <div className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Lokasi
                   </p>
-                  <p className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     {watch("location") || "—"}
                   </p>
                 </div>
@@ -442,7 +442,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
           variant="outline"
           onClick={handleCancel}
           disabled={isSubmitting}
-          className="rounded-lg border-gray-200 text-xs font-semibold text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
+          className="rounded-lg border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
         >
           Batal
         </Button>
@@ -450,7 +450,7 @@ export default function DonorEventForm({ mode, initialData }: Props) {
           type="submit"
           size="sm"
           disabled={isBusy}
-          className="rounded-lg bg-brand-600 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="rounded-lg bg-brand-600 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           {isSubmitting ? (
             <>

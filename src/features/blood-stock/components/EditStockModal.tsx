@@ -102,10 +102,10 @@ function EditStockForm({
             {stock.rhesus === "POSITIVE" ? "+" : "−"}
           </div>
           <div>
-            <h3 className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
               Stok Golongan {stock.bloodType}
             </h3>
-            <p className="text-xs text-gray-400 dark:text-gray-500">
+            <p className="text-sm text-gray-400 dark:text-gray-500">
               Stok awal: <span className="font-mono font-semibold text-gray-600 dark:text-gray-300">{stock.stock}</span> kantong
             </p>
           </div>
@@ -118,7 +118,7 @@ function EditStockForm({
           <div className="mb-1.5 flex items-center justify-between">
             <label
               htmlFor="stock-total"
-              className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500"
+              className="text-sm font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500"
             >
               Total Stok Baru
             </label>
@@ -129,7 +129,7 @@ function EditStockForm({
                 type="button"
                 onClick={reset}
                 disabled={isPending}
-                className="flex items-center gap-1 text-[11px] font-semibold text-brand-600 transition hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
+                className="flex items-center gap-1 text-xs font-semibold text-brand-600 transition hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
               >
                 <RotateCcw className="size-3" />
                 Reset Awal
@@ -153,7 +153,7 @@ function EditStockForm({
             />
 
             <div className="flex shrink-0 items-center gap-2 pl-3">
-              <span className="text-xs font-medium text-gray-400">kantong</span>
+              <span className="text-sm font-medium text-gray-400">kantong</span>
               
               {/* Diff Indicator Badge */}
               {diff !== 0 && !Number.isNaN(value) && (
@@ -174,10 +174,10 @@ function EditStockForm({
         {/* Stepper Control */}
         <div>
           <div className="mb-1.5 flex items-center justify-between">
-            <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
               Ubah Bertahap
             </span>
-            <span className="text-[11px] text-gray-400">Per klik</span>
+            <span className="text-xs text-gray-400">Per klik</span>
           </div>
 
           <div className="flex items-center rounded-lg border border-gray-200 bg-white p-1 dark:border-white/10 dark:bg-gray-800/40">
@@ -186,7 +186,7 @@ function EditStockForm({
               onClick={() => applyDelta(-1)}
               disabled={isPending || !deltaValid}
               aria-label="Kurangi stok"
-              className="flex size-9 shrink-0 items-center justify-center rounded-lg text-gray-500 transition hover:bg-gray-100 hover:text-error-600 disabled:pointer-events-none disabled:opacity-30 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-error-400"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg text-gray-500 transition hover:bg-gray-100 hover:text-error-600 disabled:pointer-events-none disabled:opacity-30 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-error-400"
             >
               <Minus className="size-4" />
             </button>
@@ -208,7 +208,7 @@ function EditStockForm({
               onClick={() => applyDelta(1)}
               disabled={isPending || !deltaValid}
               aria-label="Tambah stok"
-              className="flex size-9 shrink-0 items-center justify-center rounded-lg text-gray-500 transition hover:bg-gray-100 hover:text-brand-600 disabled:pointer-events-none disabled:opacity-30 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-brand-400"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg text-gray-500 transition hover:bg-gray-100 hover:text-brand-600 disabled:pointer-events-none disabled:opacity-30 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-brand-400"
             >
               <Plus className="size-4" />
             </button>
@@ -217,7 +217,7 @@ function EditStockForm({
 
         {/* Error Banner */}
         {error && (
-          <div className="flex items-center gap-2 rounded-xl border border-error-500/20 bg-error-50/60 p-3 text-xs font-medium text-error-600 dark:border-error-500/20 dark:bg-error-500/10 dark:text-error-400">
+          <div className="flex items-center gap-2 rounded-xl border border-error-500/20 bg-error-50/60 p-3 text-sm font-medium text-error-600 dark:border-error-500/20 dark:bg-error-500/10 dark:text-error-400">
             <AlertCircle className="size-4 shrink-0" />
             <span>{error}</span>
           </div>
@@ -233,7 +233,7 @@ function EditStockForm({
             variant="outline"
             onClick={onClose}
             disabled={isPending}
-            className="rounded-lg border-gray-200 text-xs font-semibold dark:border-white/10"
+            className="rounded-lg border-gray-200 text-sm font-semibold dark:border-white/10"
           >
             Batal
           </Button>
@@ -242,7 +242,7 @@ function EditStockForm({
             size="sm"
             onClick={handleSubmit}
             disabled={isPending || !isValid || isUnchanged}
-            className="rounded-lg text-xs font-semibold shadow-sm"
+            className="rounded-lg text-sm font-semibold shadow-sm"
           >
             {isPending ? (
               <span className="flex items-center gap-2">

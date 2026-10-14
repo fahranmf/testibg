@@ -88,7 +88,7 @@ export default function StatusDonut({
         <h3 className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
           Status Konten
         </h3>
-        <p className="text-[11px] text-gray-500 dark:text-gray-400">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
           Berita &amp; aktivitas
         </p>
       </div>

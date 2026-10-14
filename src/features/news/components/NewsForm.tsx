@@ -173,7 +173,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
         <div className="space-y-5 lg:col-span-7">
           <div className="flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
             <FileText className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
               Informasi Utama
             </h3>
           </div>
@@ -181,7 +181,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
           {/* Judul & Slug */}
           <div className="space-y-4">
             <div>
-              <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+              <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                 Judul Berita <span className="text-rose-500">*</span>
               </Label>
               <Input
@@ -198,7 +198,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
             </div>
 
             <div>
-              <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+              <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                 URL Slug <span className="text-rose-500">*</span>
               </Label>
               <Input
@@ -212,7 +212,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
                   {errors.slug.message}
                 </p>
               ) : (
-                <p className="mt-1 text-[11px] leading-5 text-gray-400 dark:text-gray-500">
+                <p className="mt-1 text-xs leading-5 text-gray-400 dark:text-gray-500">
                   Slug dibuat otomatis dari judul dan dapat diubah secara
                   manual.
                 </p>
@@ -222,7 +222,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
 
           {/* Kategori */}
           <div>
-            <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+            <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
               Kategori <span className="text-rose-500">*</span>
             </Label>
             <div className="relative mt-1.5">
@@ -260,7 +260,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
           <div>
             <div className="flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <FileText className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Isi Artikel
               </h3>
             </div>
@@ -268,7 +268,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
             <div className="mt-5 space-y-5">
               {/* Excerpt */}
               <div>
-                <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                   Ringkasan
                 </Label>
                 <textarea
@@ -290,7 +290,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
 
               {/* Content with Auto-Expand */}
               <div>
-                <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                   Konten <span className="text-rose-500">*</span>
                 </Label>
                 <textarea
@@ -324,7 +324,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
           <div>
             <div className="mb-3 flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <Sparkles className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Thumbnail
               </h3>
             </div>
@@ -358,10 +358,10 @@ export default function NewsForm({ news = null }: NewsFormProps) {
               ) : (
                 <div className="py-2">
                   <UploadCloud className="mx-auto h-8 w-8 text-gray-400 transition group-hover:text-brand-500" />
-                  <p className="mt-2 text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <p className="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Klik untuk memilih thumbnail
                   </p>
-                  <p className="mt-1 text-[10px] text-gray-400">
+                  <p className="mt-1 text-xs text-gray-400">
                     Format JPG, PNG, WEBP (Maks. 5MB)
                   </p>
                 </div>
@@ -394,7 +394,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
           variant="outline"
           onClick={handleCancel}
           disabled={isSubmitting}
-          className="rounded-lg border-gray-200 text-xs font-semibold text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
+          className="rounded-lg border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
         >
           Batal
         </Button>
@@ -402,7 +402,7 @@ export default function NewsForm({ news = null }: NewsFormProps) {
           type="submit"
           size="sm"
           disabled={isBusy}
-          className="rounded-lg bg-brand-600 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="rounded-lg bg-brand-600 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           {isSubmitting ? (
             <>

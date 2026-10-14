@@ -8,13 +8,12 @@ const sitemap = [
   { label: "Panduan Donor", href: "#panduan-donor" },
   { label: "Media Center", href: "#media" },
   { label: "Tentang Kami", href: "#quote" },
-  { label: "Donasi", href: "#cta" },
+  { label: "Donor", href: "#cta" },
 ];
 
 const socials = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "TikTok", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/utdpmidepok/" },
+  { label: "Facebook", href: "https://www.facebook.com/utdpmidepok/" },
 ];
 
 export default function Footer() {
@@ -91,9 +90,9 @@ export default function Footer() {
                 <Mail size={14} className="shrink-0 text-brand-400" />
                 <span>info@pmikotadepok.or.id</span>
               </li>
-              <li className="mt-2 rounded-lg bg-brand-900/50 px-3 py-2 text-xs text-brand-300">
+              {/* <li className="mt-2 rounded-lg bg-brand-900/50 px-3 py-2 text-xs text-brand-300">
                 <span className="font-semibold">Layanan Darurat 118</span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -105,10 +104,10 @@ export default function Footer() {
             &copy; 2026 UDD PMI Kota Depok. Hak Cipta Dilindungi.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors duration-150">
+            <Link href="/ketentuan-layanan" className="text-xs text-gray-500 hover:text-gray-300 transition-colors duration-150">
               Ketentuan Layanan
             </Link>
-            <Link href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors duration-150">
+            <Link href="/kebijakan-privasi" className="text-xs text-gray-500 hover:text-gray-300 transition-colors duration-150">
               Kebijakan Privasi
             </Link>
           </div>

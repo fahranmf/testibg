@@ -93,12 +93,12 @@ export default function ContactForm() {
                 </a>
               </div>
 
-              <div className="relative z-10 mt-10 rounded-lg bg-white/10 px-4 py-3">
+              {/* <div className="relative z-10 mt-10 rounded-lg bg-white/10 px-4 py-3">
                 <p className="text-xs font-semibold text-white">Darurat 118</p>
                 <p className="mt-0.5 text-xs text-white/60">
                   24 jam untuk keadaan gawat darurat
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Right — form */}

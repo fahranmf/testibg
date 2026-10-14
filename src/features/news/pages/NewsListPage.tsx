@@ -174,7 +174,7 @@ export default function NewsListPage() {
                 placeholder="Cari berita..."
                 value={search}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="h-9 rounded-lg border-gray-200 bg-gray-50/50 pl-9 pr-8 text-xs transition focus:border-brand-500 focus:bg-white focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:focus:border-brand-400 dark:focus:bg-transparent"
+                className="h-10 rounded-lg border-gray-200 bg-gray-50/50 pl-10 pr-8 text-sm transition focus:border-brand-500 focus:bg-white focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:focus:border-brand-400 dark:focus:bg-transparent"
               />
 
               {search && (
@@ -207,7 +207,7 @@ export default function NewsListPage() {
                       e.target.value as NewsCategory | "all",
                     )
                   }
-                  className="h-9 min-w-[160px] appearance-none rounded-lg border border-gray-200 bg-white px-3 pr-8 text-xs font-medium text-gray-600 outline-none transition hover:border-gray-300 focus:border-brand-500 focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:border-white/[0.14]"
+                  className="h-10 min-w-[170px] appearance-none rounded-lg border border-gray-200 bg-white px-3.5 pr-9 text-sm font-medium text-gray-600 outline-none transition hover:border-gray-300 focus:border-brand-500 focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:border-white/[0.14]"
                 >
                   <option
                     value="all"
@@ -247,7 +247,7 @@ export default function NewsListPage() {
                 <button
                   type="button"
                   onClick={resetFilters}
-                  className="inline-flex h-9 items-center gap-1 rounded-lg px-2.5 text-xs font-medium text-gray-400 hover:text-brand-600 dark:hover:text-brand-400"
+                  className="inline-flex h-10 items-center gap-1 rounded-lg px-3 text-sm font-medium text-gray-400 hover:text-brand-600 dark:hover:text-brand-400"
                 >
                   <RotateCcw className="h-3.5 w-3.5" />
                   Reset
@@ -259,12 +259,12 @@ export default function NewsListPage() {
           {/* Active Filters Display */}
           {hasActiveFilters && (
             <div className="flex flex-wrap items-center gap-2 border-t border-gray-100 px-4 py-2.5 dark:border-white/5">
-              <span className="text-[11px] font-medium text-gray-400">
+              <span className="text-xs font-medium text-gray-400">
                 Filter aktif:
               </span>
 
               {search.trim() && (
-                <span className="inline-flex items-center gap-1 rounded-md bg-brand-50 px-2 py-0.5 text-[11px] font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
+                <span className="inline-flex items-center gap-1 rounded-md bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
                   &quot;{search}&quot;
                   <button
                     type="button"
@@ -277,7 +277,7 @@ export default function NewsListPage() {
               )}
 
               {status !== "all" && (
-                <span className="inline-flex items-center gap-1 rounded-md bg-brand-50 px-2 py-0.5 text-[11px] font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
+                <span className="inline-flex items-center gap-1 rounded-md bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
                   Status:{" "}
                   {STATUS_FILTERS.find((item) => item.value === status)?.label}
                   <button
@@ -291,7 +291,7 @@ export default function NewsListPage() {
               )}
 
               {category !== "all" && (
-                <span className="inline-flex items-center gap-1 rounded-md bg-brand-50 px-2 py-0.5 text-[11px] font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
+                <span className="inline-flex items-center gap-1 rounded-md bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
                   {NEWS_CATEGORY_LABELS[category]}
                   <button
                     type="button"
@@ -318,7 +318,7 @@ export default function NewsListPage() {
           />
 
           {isFetching && !isLoading && (
-            <div className="absolute right-4 top-4 z-20 flex items-center gap-1.5 rounded-full border border-brand-200/50 bg-white/90 px-3 py-1 text-[11px] font-semibold text-brand-600 shadow-sm backdrop-blur-md dark:border-brand-500/20 dark:bg-gray-900/90 dark:text-brand-300">
+            <div className="absolute right-4 top-4 z-20 flex items-center gap-1.5 rounded-full border border-brand-200/50 bg-white/90 px-3 py-1.5 text-xs font-semibold text-brand-600 shadow-sm backdrop-blur-md dark:border-brand-500/20 dark:bg-gray-900/90 dark:text-brand-300">
               <Loader2 className="h-3.5 w-3.5 animate-spin" />
               Memperbarui...
             </div>

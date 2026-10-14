@@ -14,7 +14,7 @@ const ROLE_STYLES: Record<UserRole, string> = {
 export default function UserRoleBadge({ role }: { role: Role }) {
   if (role === "SUPER_ADMIN") {
     return (
-      <span className="inline-flex items-center rounded-full bg-warning-50 px-2.5 py-1 text-xs font-medium text-warning-700 dark:bg-warning-500/10 dark:text-warning-400">
+      <span className="inline-flex items-center rounded bg-warning-50 px-3 py-1.5 text-xs font-medium text-warning-700 dark:bg-warning-500/10 dark:text-warning-400">
         Super Admin
       </span>
     );
@@ -22,7 +22,7 @@ export default function UserRoleBadge({ role }: { role: Role }) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${ROLE_STYLES[role]}`}
+      className={`inline-flex items-center rounded px-2 py-1 text-xs font-medium ${ROLE_STYLES[role]}`}
     >
       {USER_ROLE_LABELS[role]}
     </span>

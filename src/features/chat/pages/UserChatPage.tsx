@@ -87,8 +87,8 @@ export default function UserChatPage() {
   };
 
   return (
-    <main className="flex min-h-dvh bg-gray-100 p-0 sm:p-5">
-      <section className="mx-auto flex min-h-dvh w-full max-w-4xl flex-col overflow-hidden bg-white sm:min-h-0 sm:rounded-xl sm:border sm:border-gray-200 sm:shadow-theme-lg">
+    <main className="flex h-dvh min-h-0 overflow-hidden bg-gray-100 p-0 sm:p-5">
+      <section className="mx-auto flex h-full min-h-0 w-full max-w-4xl flex-col overflow-hidden bg-white sm:rounded-xl sm:border sm:border-gray-200 sm:shadow-theme-lg">
         <header className="flex h-15 shrink-0 items-center justify-between border-b border-gray-200 px-4 sm:px-5">
           <div className="flex min-w-0 items-center gap-2.5">
             <Avatar name="PMI" />
@@ -111,7 +111,7 @@ export default function UserChatPage() {
           </button>
         </header>
 
-        <div className="flex-1 overflow-y-auto bg-gray-50 px-4 py-5 sm:px-6">
+        <div className="min-h-0 flex-1 overflow-y-auto bg-gray-50 px-4 py-5 sm:px-6">
           {thread.isLoading && (
             <div className="flex justify-center py-16">
               <Loader2 className="size-5 animate-spin text-brand-600" />

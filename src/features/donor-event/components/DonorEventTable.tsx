@@ -1,7 +1,7 @@
 "use client";
 
 import { EyeIcon } from "@/icons";
-import { MapPin } from "lucide-react";
+// import { MapPin } from "lucide-react";
 
 import {
   Table,
@@ -54,7 +54,9 @@ function LoadingState() {
               <TableCell
                 key={heading}
                 isHeader
-                className={index === 5 ? "text-center" : ""}
+                className={
+                  index === 0 ? "min-w-[180px]" : index === 5 ? "text-center" : ""
+                }
               >
                 {heading}
               </TableCell>
@@ -65,7 +67,7 @@ function LoadingState() {
         <TableBody>
           {Array.from({ length: 6 }).map((_, index) => (
             <TableRow key={index}>
-              <TableCell>
+              <TableCell className="min-w-[180px]">
                 <div className="flex items-center gap-3">
                   <div className="flex w-12 shrink-0 flex-col items-center rounded-lg bg-gray-100 py-1.5 dark:bg-white/5">
                     <div className="h-2 w-6 animate-pulse rounded bg-gray-200 dark:bg-white/10" />
@@ -145,6 +147,7 @@ export default function DonorEventTable({
               sortBy={sortBy}
               sortOrder={sortOrder}
               onSort={handleSort}
+              className="min-w-[180px]"
             />
 
             <SortableHeader
@@ -183,10 +186,10 @@ export default function DonorEventTable({
                 key={item.id}
                 className="group transition-colors duration-150 hover:bg-gray-50/60 dark:hover:bg-white/2.5"
               >
-                <TableCell>
+                <TableCell className="min-w-[180px]">
                   <div className="flex items-center gap-3">
                     <div className="flex w-12 shrink-0 flex-col items-center rounded-lg border border-gray-200/80 bg-gray-50 py-1.5 dark:border-white/[0.07] dark:bg-white/[0.03]">
-                      <span className="text-[10px] font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">
+                      <span className="text-xs font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">
                         {monthFormatter.format(startDate)}
                       </span>
                       <span className="text-base font-bold leading-tight text-gray-900 dark:text-white">
@@ -194,10 +197,10 @@ export default function DonorEventTable({
                       </span>
                     </div>
                     <div>
-                      <p className="text-[12px] font-medium text-gray-600 dark:text-gray-300">
+                      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
                         {dateFormatter.format(startDate)}
                       </p>
-                      <p className="mt-0.5 text-[11px] text-gray-400 dark:text-gray-500">
+                      <p className="mt-0.5 text-xs text-gray-400 dark:text-gray-500">
                         {timeFormatter.format(startDate)} —{" "}
                         {timeFormatter.format(endDate)}
                       </p>
@@ -208,13 +211,13 @@ export default function DonorEventTable({
                 <TableCell>
                   <div className="max-w-48 py-0.5">
                     <p
-                      className="truncate text-[13px] font-semibold leading-5 tracking-[-0.01em] text-gray-800 dark:text-white/90"
+                      className="truncate text-sm font-semibold leading-5 tracking-[-0.01em] text-gray-800 dark:text-white/90"
                       title={item.title}
                     >
                       {item.title}
                     </p>
                     <p
-                      className="mt-1 truncate font-mono text-[10px] text-gray-400 dark:text-gray-600"
+                      className="mt-1 truncate font-mono text-xs text-gray-400 dark:text-gray-600"
                       title={`/${item.slug}`}
                     >
                       /{item.slug}
@@ -224,8 +227,8 @@ export default function DonorEventTable({
 
                 <TableCell>
                   <div className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400">
-                    <MapPin className="size-3.5 shrink-0" />
-                    <span className="truncate text-[12px] max-w-[140px]">
+                    {/* <MapPin className="size-3.5 shrink-0" /> */}
+                    <span className="max-w-[160px] truncate text-sm">
                       {item.location}
                     </span>
                   </div>
@@ -236,7 +239,7 @@ export default function DonorEventTable({
                 </TableCell>
 
                 <TableCell>
-                  <span className="text-[12px] font-medium text-gray-600 dark:text-gray-300">
+                  <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                     {item.publishedAt
                       ? dateFormatter.format(new Date(item.publishedAt))
                       : "—"}

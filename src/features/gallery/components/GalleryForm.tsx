@@ -260,14 +260,14 @@ export default function GalleryForm({ mode, initialData }: Props) {
         <div className="space-y-5 lg:col-span-7">
           <div className="flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
             <FileText className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
               Informasi Utama
             </h3>
           </div>
 
           <div className="space-y-4">
             <div>
-              <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+              <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                 Judul Album <span className="text-rose-500">*</span>
               </Label>
               <Input
@@ -284,13 +284,13 @@ export default function GalleryForm({ mode, initialData }: Props) {
             </div>
 
             <div>
-              <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+              <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                 URL Slug <span className="text-rose-500">*</span>
               </Label>
               <Input
                 placeholder="donor-darah-di-kantor-pmi"
                 error={!!errors.slug}
-                className="mt-1.5 rounded-lg border-gray-200 font-mono text-xs text-gray-600 focus:border-brand-500 focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300"
+                className="mt-1.5 rounded-lg border-gray-200 font-mono text-sm text-gray-600 focus:border-brand-500 focus:ring-brand-500/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300"
                 {...register("slug")}
               />
               {errors.slug && (
@@ -301,7 +301,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
             </div>
 
             <div>
-              <Label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
+              <Label className="flex items-center gap-1.5 text-sm font-semibold text-gray-700 dark:text-gray-300">
                 <Calendar className="h-3.5 w-3.5 text-gray-400" /> Tanggal
                 Kegiatan
               </Label>
@@ -319,7 +319,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
             </div>
 
             <div>
-              <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+              <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                 Deskripsi Album
               </Label>
               <textarea
@@ -352,7 +352,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
           <div>
             <div className="mb-3 flex items-center gap-2 border-b border-gray-100 pb-3 dark:border-white/5">
               <Sparkles className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Cover Album
               </h3>
             </div>
@@ -386,10 +386,10 @@ export default function GalleryForm({ mode, initialData }: Props) {
               ) : (
                 <div className="py-2">
                   <UploadCloud className="mx-auto h-8 w-8 text-gray-400 transition group-hover:text-brand-500" />
-                  <p className="mt-2 text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <p className="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Klik untuk memilih cover
                   </p>
-                  <p className="mt-1 text-[10px] text-gray-400">
+                  <p className="mt-1 text-xs text-gray-400">
                     Format JPG, PNG, WEBP (Maks. 5MB)
                   </p>
                 </div>
@@ -417,14 +417,14 @@ export default function GalleryForm({ mode, initialData }: Props) {
             <div className="mb-3 flex items-center justify-between border-b border-gray-100 pb-3 dark:border-white/5">
               <div className="flex items-center gap-2">
                 <ImagePlus className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                   Foto Album
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={handleAddImage}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
               >
                 + Tambah Foto
               </button>
@@ -432,7 +432,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
 
             {fields.length === 0 ? (
               <div className="rounded-lg border border-dashed border-gray-200 py-6 text-center dark:border-white/10">
-                <p className="text-xs text-gray-400">Belum ada foto album.</p>
+                <p className="text-sm text-gray-400">Belum ada foto album.</p>
               </div>
             ) : (
               <div className="space-y-2.5">
@@ -476,7 +476,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
                       <div className="min-w-0 flex-1">
                         <Input
                           placeholder="Keterangan foto..."
-                          className="h-8 rounded border-gray-200 text-xs focus:ring-1 dark:border-white/10 dark:bg-transparent"
+                          className="h-9 rounded border-gray-200 text-sm focus:ring-1 dark:border-white/10 dark:bg-transparent"
                           {...register(`images.${index}.caption` as const)}
                         />
                       </div>
@@ -487,17 +487,17 @@ export default function GalleryForm({ mode, initialData }: Props) {
                             type="button"
                             onClick={() => handleMoveImage(index, index - 1)}
                             disabled={index === 0}
-                            className="p-0.5 text-gray-400 hover:text-gray-700 disabled:opacity-20 dark:hover:text-white"
+                            className="flex size-6 items-center justify-center rounded text-gray-400 hover:bg-gray-100 hover:text-gray-700 disabled:opacity-20 dark:hover:bg-white/5 dark:hover:text-white"
                           >
-                            <ChevronUp className="h-3 w-3" />
+                            <ChevronUp className="h-4 w-4" />
                           </button>
                           <button
                             type="button"
                             onClick={() => handleMoveImage(index, index + 1)}
                             disabled={index === fields.length - 1}
-                            className="p-0.5 text-gray-400 hover:text-gray-700 disabled:opacity-20 dark:hover:text-white"
+                            className="flex size-6 items-center justify-center rounded text-gray-400 hover:bg-gray-100 hover:text-gray-700 disabled:opacity-20 dark:hover:bg-white/5 dark:hover:text-white"
                           >
-                            <ChevronDown className="h-3 w-3" />
+                            <ChevronDown className="h-4 w-4" />
                           </button>
                         </div>
                         <button
@@ -505,7 +505,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
                           onClick={() =>
                             handleRemoveImage(field._tempId, index)
                           }
-                          className="rounded p-1 text-gray-400 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-500/10 dark:hover:text-rose-400"
+                          className="flex size-8 items-center justify-center rounded text-gray-400 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-500/10 dark:hover:text-rose-400"
                         >
                           <Trash2 className="h-3.5 w-3.5" />
                         </button>
@@ -527,7 +527,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
           variant="outline"
           onClick={handleCancel}
           disabled={isSubmitting}
-          className="rounded-lg border-gray-200 text-xs font-semibold text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
+          className="rounded-lg border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/5"
         >
           Batal
         </Button>
@@ -535,7 +535,7 @@ export default function GalleryForm({ mode, initialData }: Props) {
           type="submit"
           size="sm"
           disabled={isBusy}
-          className="rounded-lg bg-brand-600 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="rounded-lg bg-brand-600 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           {isSubmitting ? (
             <>

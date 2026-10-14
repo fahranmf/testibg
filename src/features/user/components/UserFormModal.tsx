@@ -108,14 +108,14 @@ export default function UserFormModal({
     >
       {/* Header */}
       <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4 dark:border-white/5">
-        <h3 className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+        <h3 className="text-base font-bold tracking-tight text-gray-900 dark:text-white">
           {isEdit ? "Edit User" : "Tambah User"}
         </h3>
         <button
           type="button"
           onClick={onClose}
           disabled={isBusy}
-          className="flex size-8 items-center justify-center rounded-lg text-gray-400 transition hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-white/5 dark:hover:text-white"
+          className="flex size-9 items-center justify-center rounded-lg text-gray-400 transition hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-white/5 dark:hover:text-white"
         >
           <svg
             width="18"
@@ -137,7 +137,7 @@ export default function UserFormModal({
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-6">
         {/* Nama */}
         <div>
-          <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+          <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
             Nama <span className="text-rose-500">*</span>
           </Label>
           <Input
@@ -155,7 +155,7 @@ export default function UserFormModal({
 
         {/* Email */}
         <div>
-          <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+          <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
             Email <span className="text-rose-500">*</span>
           </Label>
           <Input
@@ -174,7 +174,7 @@ export default function UserFormModal({
 
         {/* Password */}
         <div>
-          <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+          <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
             Password {!isEdit && <span className="text-rose-500">*</span>}
           </Label>
           <Input
@@ -193,7 +193,7 @@ export default function UserFormModal({
 
         {/* Role */}
         <div>
-          <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+          <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
             Role <span className="text-rose-500">*</span>
           </Label>
           <div className="relative mt-1.5">
@@ -228,7 +228,7 @@ export default function UserFormModal({
             variant="outline"
             onClick={onClose}
             disabled={isBusy}
-            className="rounded-lg border-gray-200 text-xs font-semibold dark:border-white/10"
+            className="rounded-lg border-gray-200 text-sm font-semibold dark:border-white/10"
           >
             Batal
           </Button>
@@ -236,7 +236,7 @@ export default function UserFormModal({
             type="submit"
             size="sm"
             disabled={isBusy}
-            className="rounded-lg text-xs font-semibold shadow-sm"
+            className="rounded-lg text-sm font-semibold shadow-sm"
           >
             {isBusy ? (
               <span className="flex items-center gap-2">

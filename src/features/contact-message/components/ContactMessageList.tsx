@@ -2,7 +2,7 @@
 
 import { Mail, MailOpen, Inbox } from "lucide-react";
 
-import { EmptyState, EmptyStateIcon } from "@/components/ui/table";
+import { EmptyState } from "@/components/ui/table";
 
 import { ContactMessage } from "../contact-message.types";
 
@@ -31,9 +31,9 @@ function LoadingState() {
       {Array.from({ length: 6 }).map((_, i) => (
         <div
           key={i}
-          className="flex items-center gap-4 border-b border-gray-100 px-5 py-4 dark:border-white/5"
+          className="flex items-center gap-4 border-b border-gray-100 px-5 py-5 dark:border-white/5"
         >
-          <div className="size-10 shrink-0 animate-pulse rounded-full bg-gray-100 dark:bg-white/5" />
+          <div className="size-11 shrink-0 animate-pulse rounded-full bg-gray-100 dark:bg-white/5" />
 
           <div className="flex-1 space-y-2">
             <div className="h-3.5 w-40 animate-pulse rounded bg-gray-100 dark:bg-white/5" />
@@ -51,7 +51,7 @@ function LoadingState() {
 function Avatar({ name, isUnread }: { name: string; isUnread: boolean }) {
   return (
     <div
-      className={`flex size-10 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+      className={`flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
         isUnread
           ? "bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-300"
           : "bg-gray-100 text-gray-500 dark:bg-white/5 dark:text-gray-400"
@@ -93,14 +93,14 @@ export default function ContactMessageList({
             key={item.id}
             type="button"
             onClick={() => onView(item)}
-            className={`flex w-full items-center gap-4 border-b border-gray-100 px-5 py-4 text-left transition-colors duration-150 hover:bg-gray-50/60 dark:border-white/5 dark:hover:bg-white/[0.025]`}
+            className={`flex w-full items-center gap-4 border-b border-gray-100 px-5 py-5 text-left transition-colors duration-150 hover:bg-gray-50/60 dark:border-white/5 dark:hover:bg-white/[0.025]`}
           >
             <Avatar name={item.name} isUnread={isUnread} />
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
                 <span
-                  className={`truncate text-[13px] leading-5 tracking-[-0.01em] ${
+                    className={`truncate text-sm leading-5 tracking-[-0.01em] ${
                     isUnread
                       ? "font-bold text-gray-900 dark:text-white"
                       : "font-medium text-gray-700 dark:text-gray-200"
@@ -115,7 +115,7 @@ export default function ContactMessageList({
               </div>
 
               <p
-                className={`mt-0.5 truncate text-[12px] ${
+                className={`mt-0.5 truncate text-sm ${
                   isUnread
                     ? "font-semibold text-gray-800 dark:text-white/90"
                     : "font-medium text-gray-600 dark:text-gray-300"
@@ -124,13 +124,13 @@ export default function ContactMessageList({
                 {item.subject || "Tanpa subjek"}
               </p>
 
-              <p className="mt-0.5 line-clamp-1 text-[11px] leading-relaxed text-gray-400 dark:text-gray-500">
+              <p className="mt-1 line-clamp-1 text-xs leading-relaxed text-gray-400 dark:text-gray-500">
                 {item.excerpt || ""}
               </p>
             </div>
 
             <div className="flex shrink-0 flex-col items-end gap-1.5">
-              <span className="text-[11px] font-medium text-gray-400 dark:text-gray-500">
+              <span className="text-xs font-medium text-gray-400 dark:text-gray-500">
                 {dateFormatter.format(new Date(item.createdAt))}
               </span>
 

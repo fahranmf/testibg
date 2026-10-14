@@ -77,47 +77,47 @@ export default function ProfilePage() {
       />
 
       <section className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-theme-xs dark:border-white/10 dark:bg-white/[0.03]">
-        <div className="flex items-start gap-3 border-b border-gray-100 px-5 py-4 dark:border-white/10">
+        <div className="flex items-start gap-3 border-b border-gray-100 px-6 py-5 dark:border-white/10">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-500 dark:bg-brand-500/10"><UserRound className="size-5" /></span>
           <div><h2 className="font-semibold text-gray-900 dark:text-white">Informasi pribadi</h2><p className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">Nama dan email ini dipakai untuk identitas akun Anda.</p></div>
         </div>
-        <form onSubmit={profileForm.handleSubmit(submitProfile)} className="space-y-4 p-5">
+        <form onSubmit={profileForm.handleSubmit(submitProfile)} className="space-y-5 p-6">
           <div>
-            <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">Nama <span className="text-rose-500">*</span></Label>
+            <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Nama <span className="text-rose-500">*</span></Label>
             <Input error={!!profileForm.formState.errors.name} className={inputClassName} placeholder="Nama lengkap" {...profileForm.register("name")} />
             <FieldError message={profileForm.formState.errors.name?.message} />
           </div>
           <div>
-            <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">Email <span className="text-rose-500">*</span></Label>
+            <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Email <span className="text-rose-500">*</span></Label>
             <Input type="email" error={!!profileForm.formState.errors.email} className={inputClassName} placeholder="email@contoh.com" {...profileForm.register("email")} />
             <FieldError message={profileForm.formState.errors.email?.message} />
           </div>
-          <div className="flex justify-end border-t border-gray-100 pt-4 dark:border-white/10"><Button type="submit" disabled={profileForm.formState.isSubmitting} className="min-w-36">{profileForm.formState.isSubmitting ? <><Loader2 className="size-4 animate-spin" />Menyimpan...</> : <><Check className="size-4" />Simpan profil</>}</Button></div>
+          <div className="flex justify-end border-t border-gray-100 pt-4 dark:border-white/10"><Button size="sm" type="submit" disabled={profileForm.formState.isSubmitting} className="h-9 shrink-0 gap-1.5 self-start rounded-lg px-3.5 text-sm shadow-sm transition hover:bg-brand-700 active:scale-[0.98] dark:bg-brand-500 dark:hover:bg-brand-600 sm:self-auto">{profileForm.formState.isSubmitting ? <><Loader2 className="size-4 animate-spin" />Menyimpan...</> : <><Check className="size-4" />Simpan profil</>}</Button></div>
         </form>
       </section>
 
       <section className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-theme-xs dark:border-white/10 dark:bg-white/[0.03]">
-        <div className="flex items-start gap-3 border-b border-gray-100 px-5 py-4 dark:border-white/10">
+        <div className="flex items-start gap-3 border-b border-gray-100 px-6 py-5 dark:border-white/10">
           <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400"><KeyRound className="size-5" /></span>
           <div><h2 className="font-semibold text-gray-900 dark:text-white">Keamanan</h2><p className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">Gunakan password lama untuk mengonfirmasi perubahan.</p></div>
         </div>
-        <form onSubmit={passwordForm.handleSubmit(submitPassword)} className="space-y-4 p-5">
+        <form onSubmit={passwordForm.handleSubmit(submitPassword)} className="space-y-5 p-6">
           <div>
-            <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">Password lama <span className="text-rose-500">*</span></Label>
+            <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Password lama <span className="text-rose-500">*</span></Label>
             <Input type="password" autoComplete="current-password" error={!!passwordForm.formState.errors.currentPassword} className={inputClassName} {...passwordForm.register("currentPassword")} />
             <FieldError message={passwordForm.formState.errors.currentPassword?.message} />
           </div>
           <div>
-            <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">Password baru <span className="text-rose-500">*</span></Label>
+            <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Password baru <span className="text-rose-500">*</span></Label>
             <Input type="password" autoComplete="new-password" error={!!passwordForm.formState.errors.newPassword} className={inputClassName} placeholder="Minimal 8 karakter" {...passwordForm.register("newPassword")} />
             <FieldError message={passwordForm.formState.errors.newPassword?.message} />
           </div>
           <div>
-            <Label className="text-xs font-semibold text-gray-700 dark:text-gray-300">Konfirmasi password baru <span className="text-rose-500">*</span></Label>
+            <Label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Konfirmasi password baru <span className="text-rose-500">*</span></Label>
             <Input type="password" autoComplete="new-password" error={!!passwordForm.formState.errors.confirmPassword} className={inputClassName} {...passwordForm.register("confirmPassword")} />
             <FieldError message={passwordForm.formState.errors.confirmPassword?.message} />
           </div>
-          <div className="flex justify-end border-t border-gray-100 pt-4 dark:border-white/10"><Button type="submit" disabled={passwordForm.formState.isSubmitting} className="min-w-40">{passwordForm.formState.isSubmitting ? <><Loader2 className="size-4 animate-spin" />Memperbarui...</> : <><KeyRound className="size-4" />Ubah password</>}</Button></div>
+          <div className="flex justify-end border-t border-gray-100 pt-4 dark:border-white/10"><Button type="submit" size="sm" disabled={passwordForm.formState.isSubmitting} className="h-9 shrink-0 gap-1.5 self-start rounded-lg px-3.5 text-sm shadow-sm transition hover:bg-brand-700 active:scale-[0.98] dark:bg-brand-500 dark:hover:bg-brand-600 sm:self-auto">{passwordForm.formState.isSubmitting ? <><Loader2 className="size-4 animate-spin" />Memperbarui...</> : <><KeyRound className="size-4" />Ubah password</>}</Button></div>
         </form>
       </section>
     </main>

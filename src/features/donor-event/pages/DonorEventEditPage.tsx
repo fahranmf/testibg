@@ -38,13 +38,13 @@ export default function DonorEventEditPage({
           <h3 className="mt-4 text-base font-bold text-gray-900 dark:text-white">
             Donor Event Tidak Ditemukan
           </h3>
-          <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-1.5 text-sm text-gray-500 dark:text-gray-400">
             Data donor event yang ingin kamu edit mungkin sudah dihapus atau URL
             tidak valid.
           </p>
           <Link
             href="/donor-events"
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Kembali ke Daftar Donor Event
@@ -60,13 +60,13 @@ export default function DonorEventEditPage({
       <div className="mb-5 flex items-center justify-between">
         <Link
           href={`/donor-events/${event.id}`}
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke detail event
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           Edit Donor Event
         </span>
       </div>
@@ -74,11 +74,11 @@ export default function DonorEventEditPage({
       {/* Header */}
       <div className="overflow-hidden">
         <div className="space-y-1.5">
-          <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-2xl">
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
             Edit Donor Event
           </h1>
 
-          <p className="max-w-2xl text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+          <p className="max-w-2xl text-base leading-relaxed text-gray-500 dark:text-gray-400">
             Perbarui informasi jadwal donor darah, lokasi, serta kontak.
           </p>
         </div>

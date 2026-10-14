@@ -109,12 +109,12 @@ export default function GalleryDetailPage({
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           Gallery Tidak Ditemukan
         </h2>
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           Data gallery mungkin telah dihapus atau URL yang kamu tuju salah.
         </p>
         <Link
           href="/gallery"
-          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
+          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600"
         >
           <ArrowLeft className="h-4 w-4" />
           Kembali ke Daftar
@@ -129,13 +129,13 @@ export default function GalleryDetailPage({
       <div className="mb-5 flex items-center justify-between">
         <Link
           href="/gallery"
-          className="group inline-flex items-center gap-2 text-xs font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 transition hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-300"
         >
-          <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
           Kembali ke daftar
         </Link>
 
-        <span className="hidden text-[10px] font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
+        <span className="hidden text-xs font-medium uppercase tracking-[0.12em] text-gray-400 dark:text-gray-600 sm:block">
           Detail Gallery
         </span>
       </div>
@@ -154,7 +154,7 @@ export default function GalleryDetailPage({
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center text-gray-400 dark:text-gray-600">
             <ImageOff className="h-12 w-12 stroke-[1.5]" />
-            <span className="mt-2 text-xs font-medium">
+            <span className="mt-2 text-sm font-medium">
               Tidak ada cover album
             </span>
           </div>
@@ -163,10 +163,10 @@ export default function GalleryDetailPage({
 
         {/* Hero Overlay Details */}
         <div className="absolute bottom-0 inset-x-0 p-6 text-white">
-          <h1 className="text-xl font-bold leading-tight text-white sm:text-3xl">
+          <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl">
             {gallery.title}
           </h1>
-          <p className="mt-2 text-xs font-medium text-white/80">
+          <p className="mt-2 text-sm font-medium text-white/80">
             {gallery.images.length} foto di album ini
           </p>
         </div>
@@ -180,10 +180,10 @@ export default function GalleryDetailPage({
             {/* Header Deskripsi & Action Buttons */}
             <div className="flex flex-col gap-4 border-b border-gray-100 pb-5 dark:border-white/[0.06] sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
                   Deskripsi Album
                 </h2>
-                <p className="mt-0.5 text-[11px] text-gray-400">
+                <p className="mt-0.5 text-xs text-gray-400">
                   Konteks dokumentasi album ini.
                 </p>
               </div>
@@ -193,7 +193,7 @@ export default function GalleryDetailPage({
                 {canUpdate && (
                   <Link
                     href={`/gallery/${gallery.id}/edit`}
-                    className="inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                    className="inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
                   >
                     <Edit3 className="h-3.5 w-3.5" />
                     Edit
@@ -207,7 +207,7 @@ export default function GalleryDetailPage({
                       aria-label="Aksi lainnya"
                       aria-expanded={isActionOpen}
                       onClick={() => setIsActionOpen((prev) => !prev)}
-                      className={`dropdown-toggle inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white ${
+                      className={`dropdown-toggle inline-flex h-9 w-9 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-white/[0.06] dark:hover:text-white ${
                         isActionOpen
                           ? "bg-gray-100 text-gray-900 dark:bg-white/[0.06] dark:text-white"
                           : ""
@@ -227,7 +227,7 @@ export default function GalleryDetailPage({
                             setIsActionOpen(false);
                             handleDelete();
                           }}
-                          baseClassName="flex w-full items-center gap-2 px-3 py-2 text-left text-xs font-medium text-error-600 transition-colors hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
+                          baseClassName="flex w-full items-center gap-2 px-3 py-2 text-left text-sm font-medium text-error-600 transition-colors hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-500/10"
                         >
                           {isMutating ? (
                             <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -261,7 +261,7 @@ export default function GalleryDetailPage({
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Images className="h-4 w-4 text-brand-600 dark:text-brand-400" />
-                  <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+                  <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
                     Foto Album
                   </h2>
                 </div>
@@ -286,7 +286,7 @@ export default function GalleryDetailPage({
                         className="object-contain"
                       />
                       {img.caption && (
-                        <div className="absolute inset-x-0 bottom-0 bg-black/60 p-2 text-[10px] text-white opacity-0 transition group-hover:opacity-100">
+                        <div className="absolute inset-x-0 bottom-0 bg-black/60 p-2 text-xs text-white opacity-0 transition group-hover:opacity-100">
                           <p className="line-clamp-2">{img.caption}</p>
                         </div>
                       )}
@@ -300,7 +300,7 @@ export default function GalleryDetailPage({
         {/* Meta Sidebar */}
         <aside className="self-start space-y-4 lg:sticky lg:top-22 lg:h-fit">
           <div className="rounded-xl border border-gray-200 bg-white p-5 dark:border-white/[0.07] dark:bg-white/[0.025]">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-400">
               Informasi Detail
             </h2>
 
@@ -308,10 +308,10 @@ export default function GalleryDetailPage({
               <div className="flex items-start gap-3">
                 <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Tanggal Kegiatan
                   </p>
-                  <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                     {formatDate(gallery.eventDate ?? undefined)}
                   </p>
                 </div>
@@ -321,10 +321,10 @@ export default function GalleryDetailPage({
                 <div className="flex items-start gap-3">
                   <User className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                   <div>
-                    <p className="text-[10px] font-semibold uppercase text-gray-400">
+                    <p className="text-xs font-semibold uppercase text-gray-400">
                       Dibuat oleh
                     </p>
-                    <p className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                       {gallery.createdBy.name}
                     </p>
                   </div>
@@ -334,10 +334,10 @@ export default function GalleryDetailPage({
               <div className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-brand-600 dark:text-brand-400" />
                 <div>
-                  <p className="text-[10px] font-semibold uppercase text-gray-400">
+                  <p className="text-xs font-semibold uppercase text-gray-400">
                     Slug URL
                   </p>
-                  <p className="break-all font-mono text-[11px] text-gray-600 dark:text-gray-400">
+                  <p className="break-all font-mono text-xs text-gray-600 dark:text-gray-400">
                     /{gallery.slug}
                   </p>
                 </div>
@@ -348,7 +348,7 @@ export default function GalleryDetailPage({
           {/* Shortcut Card */}
           <Link
             href="/gallery"
-            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-xs font-semibold text-gray-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-white/[0.07] dark:bg-white/[0.025] dark:text-gray-400 dark:hover:border-brand-400 dark:hover:text-brand-400"
+            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-white/[0.07] dark:bg-white/[0.025] dark:text-gray-400 dark:hover:border-brand-400 dark:hover:text-brand-400"
           >
             <span>Lihat semua gallery</span>
             <ChevronRight className="h-4 w-4" />

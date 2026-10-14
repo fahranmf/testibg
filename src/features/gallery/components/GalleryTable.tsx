@@ -187,14 +187,14 @@ export default function GalleryTable({
 
                   <div className="max-w-40 py-0.5">
                     <p
-                      className="truncate text-[13px] font-semibold leading-5 tracking-[-0.01em] text-gray-800 dark:text-white/90"
+                      className="truncate text-sm font-semibold leading-5 tracking-[-0.01em] text-gray-800 dark:text-white/90"
                       title={item.title}
                     >
                       {item.title}
                     </p>
 
                     <p
-                      className="mt-1 truncate font-mono text-[10px] text-gray-400 dark:text-gray-600"
+                      className="mt-1 truncate font-mono text-xs text-gray-400 dark:text-gray-600"
                       title={`/${item.slug}`}
                     >
                       /{item.slug}
@@ -204,7 +204,7 @@ export default function GalleryTable({
               </TableCell>
 
               <TableCell>
-                <span className="text-[12px] font-medium text-gray-600 dark:text-gray-300">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   {item.eventDate
                     ? dateFormatter.format(new Date(item.eventDate))
                     : "—"}
